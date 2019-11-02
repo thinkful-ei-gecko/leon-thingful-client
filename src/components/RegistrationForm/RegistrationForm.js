@@ -13,7 +13,9 @@ export default class RegistrationForm extends Component {
     ev.preventDefault()
     const { full_name, nick_name, user_name, password } = ev.target
 
-    let user = { full_name, nick_name, user_name, password };
+    let user = { full_name: full_name.value, nick_name: nick_name.value, user_name: user_name.value, password: password.value };
+
+    console.log(user);
 
     AuthApiService.postUser(user)
       .then(res => {
